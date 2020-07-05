@@ -9,7 +9,6 @@ Follow-up: what if you can't use division?
 Solution : 
 
 #include <iostream>
-
 using namespace std;
 
 void findMul(int a[], int size)
@@ -17,23 +16,14 @@ void findMul(int a[], int size)
     int narray[size];
 
     for (int i = 0;i < size; i++) {
-
-       
         narray[i] = 1;
         for (int j = 0; j < size; j++) {
-
             if (i != j)
                 narray[i] *= a[j];
         }
-
-       
+    
         std :: cout << narray[i] << " ";
     }
-
-
-
-
-
 }
 
 int main()
@@ -43,4 +33,3 @@ int main()
 
     return 0;
 }
-
