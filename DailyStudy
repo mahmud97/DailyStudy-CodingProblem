@@ -1,0 +1,35 @@
+Task : 
+Task asynchronously kaj kore 
+Why we need Tasks? It can be used whenever you want to execute something in parallel. Asynchronous implementation is easy in a task, using’ async’ and ‘await’ keywords.
+
+Differences Between Task And Thread
+
+The task can return a result. There is no direct mechanism to return the result from a thread.
+Task supports cancellation through the use of cancellation tokens. But Thread doesn't.
+A task can have multiple processes happening at the same time. Threads can only have one task running at a time.
+We can easily implement Asynchronous using ’async’ and ‘await’ keywords.
+A new Thread()is not dealing with Thread pool thread, whereas Task does use thread pool thread.
+A Task is a higher level concept than Thread.
+
+
+Partial classes:
+Partial classes span multiple files.With normal C# classes, you cannot declare a class in two separate files in the same project. But with the partial modifier, you can.
+for example :ABC project a ABCDBContext same name a 2 ta partial class ase 
+
+Virtual Keyword : 
+In c#, the virtual keyword is useful to override base class members such as properties, methods, etc. in the derived class to modify it based on our requirements.
+In c#, by default all the methods are non-virtual and we cannot override non-virtual methods. In case, if you want to override a method, then you need to define it with the virtual keyword.
+
+ 
+AutoMapper:
+sohoj basai automapper diye ak type ar object ke arek type ar object a convert kori 
+How do I use AutoMapper?
+
+First, you need both a source and destination type to work with.
+var config = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderDto>());
+
+secondly To perform a mapping, call one of the Map overloads:
+var mapper = config.CreateMapper();
+// or
+var mapper = new Mapper(config);
+OrderDto dto = mapper.Map<OrderDto>(order);
