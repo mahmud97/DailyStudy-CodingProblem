@@ -52,6 +52,17 @@ public T[] Reverse<T>(T[] array)
 The key point here is that the array elements can be of any type, and the function will still work. You specify the type in the method call; type safety is still guaranteed.
 
 
+Enum : 
+An enumeration type (or enum type) is a value type defined by a set of named constants of the underlying integral numeric type. 
+To define an enumeration type, use the enum keyword and specify the names of enum members:
+By default, the associated constant values of enum members are of type int; they start with zero and increase by one following the definition text order. 
+You can explicitly specify any other integral numeric type as an underlying type of an enumeration type.
+You can also explicitly specify the associated constant values, as the following example shows
+
+
+
+
+
 
 
 
