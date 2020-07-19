@@ -59,6 +59,28 @@ By default, the associated constant values of enum members are of type int; they
 You can explicitly specify any other integral numeric type as an underlying type of an enumeration type.
 You can also explicitly specify the associated constant values, as the following example shows
 
+Using :
+The using statement is used to work with an object in C# that implements the IDisposable interface.
+
+The IDisposable interface has one public method called Dispose that is used to dispose of the object. When we use the using statement,
+we don't need to explicitly dispose of the object in the code, the using statement takes care of it.
+
+using (SqlConnection conn = new SqlConnection())
+{
+
+}
+
+When we use the above block, internally the code is generated like this:
+SqlConnection conn = new SqlConnection() 
+try
+{
+
+}
+finally
+{
+    // calls the dispose method of the conn object
+}
+
 
 
 
