@@ -82,6 +82,54 @@ finally
 }
 
 
+Linq: 
+
+Obtaining a Data Source:
+
+In a LINQ query, the from clause comes first in order to introduce the data source (customers) and the range variable (cust).
+var queryAllCustomers = from cust in customers
+                        select cust;
+     
+     
+Filtering:
+
+where is used to filter 
+var queryLondonCustomers = from cust in customers
+                           where cust.City == "London"
+                           select cust;
+                           
+    var qry = from cc in ctx.Categories
+              join cd in ctx.CategoryDetails on cc.Id equals cd.CategoryId
+
+Ordering:
+
+The orderby clause will cause the elements in the returned sequence to be sorted according to the default comparer for the type being sorted. 
+For example, the following query can be extended to sort the results based on the Name property. 
+Because Name is a string, the default comparer performs an alphabetical sort from A to Z.
+
+var queryLondonCustomers3 =
+    from cust in customers
+    where cust.City == "London"
+    orderby cust.Name ascending
+    select cust;
+    
+    
+ Grouping:
+ 
+ var queryCustomersByCity =
+      from cust in customers
+      group cust by cust.City;
+      
+      
+  Selecting (Projections):
+The select clause produces the results of the query and specifies the "shape" or type of each returned element. 
+For example, you can specify whether your results will consist of complete Customer objects, just one member, a subset of members,
+or some completely different result type based on a computation or new object creation.
+When the select clause produces something other than a copy of the source element, the operation is called a projection. 
+The use of projections to transform data is a powerful capability of LINQ query expressions. 
+For more information, see Data Transformations with LINQ (C#) and select clause.
+ 
+                       
 
 
 
