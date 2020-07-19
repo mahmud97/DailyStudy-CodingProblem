@@ -33,3 +33,26 @@ var mapper = config.CreateMapper();
 // or
 var mapper = new Mapper(config);
 OrderDto dto = mapper.Map<OrderDto>(order);
+
+T:
+What does <T> denote in C# ?
+
+A generic type parameter allows you to specify an arbitrary type T to a method at compile-time, without specifying a concrete type in the method or class declaration.
+public T[] Reverse<T>(T[] array)
+{
+    var result = new T[array.Length];
+    int j=0;
+    for(int i=array.Length - 1; i>= 0; i--)
+    {
+        result[j] = array[i];
+        j++;
+    }
+    return result;
+}
+The key point here is that the array elements can be of any type, and the function will still work. You specify the type in the method call; type safety is still guaranteed.
+
+
+
+
+
+
