@@ -130,6 +130,16 @@ The use of projections to transform data is a powerful capability of LINQ query 
 For more information, see Data Transformations with LINQ (C#) and select clause.
  
                        
+Api Authentication :
+
+Identity authentication :
+In this scenario, Web API controllers act as resource servers. An authentication filter validates access tokens, 
+and the [Authorize] attribute is used to protect a resource. When a controller or action has the [Authorize] attribute, 
+all requests to that controller or action must be authenticated. Otherwise, authorization is denied, and Web API returns a 401 (Unauthorized) error.
+
+
+eg : Ryco te Identity authentication use kora hoyeche 
+eg : ABC te jwt authentication use kora hoyeche 
 
 
 
