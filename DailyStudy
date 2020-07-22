@@ -142,8 +142,16 @@ eg : Ryco te Identity authentication use kora hoyeche
 eg : ABC te jwt authentication use kora hoyeche 
 
 
+Generics: 
+Generics introduced in C# 2.0. It allows you to define a class with placeholders for the type of its fields,
+methods, parameters, etc. Generics replace these placeholders with some specific type at compile time.
 
+Advantages of Generics
+Increases the reusability of the code.
+Generic are type safe. You get compile time errors if you try to use a different type of data than the one specified in the definition.
+Generic has a performance advantage because it removes the possibilities of boxing and unboxing.
 
+reference : https://www.tutorialsteacher.com/csharp/csharp-generics
 
 
 
