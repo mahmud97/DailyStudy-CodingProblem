@@ -230,6 +230,18 @@ getGrades() {
 
 Reference : https://codeburst.io/understanding-typescript-basics-e003dbad2191
 
+Callback Function :
+
+A "callback" is a term that refers to a coding design pattern.
+In this design pattern executable code is passed as an argument to other code and it is expected to call back at some time. 
+
+Delegate is a famous way to implement Callback in C#.  But, 
+it can also be implemented by Interface. 
+I will explain Callback by Delegate and Interface one by one. 
+
+Callback by Delegate :
+
+
 
 
 
