@@ -160,3 +160,76 @@ private:	    The code is only accessible within the same class
 protected:	  The code is accessible within the same class, or in a class that is inherited from that class. You will learn more about inheritance in a later chapter
 internal:	   The code is only accessible within its own assembly, but not from another assembly. You will learn more about this in a later chapter
 
+Typescript:
+
+Typescript is the superset of javascript . 
+Javascript does not have object oriented features so typescript came 
+to solve the problem .
+If we write typescript code then we dont need 
+to write javascript as typescript automatically converted into javascript . 
+
+Fatures  of Typescript : 
+
+# 1 Strong-typed variables : In Typescript, we can define a variable’s type with the strong-typing feature like
+ we define a variable in Java or C++.
+let name: string;       // for strings
+let age: number;        // for any kind of numbers
+let isChecked: boolean; // true or false
+let data: any;          // can be changed later to any type
+let array: number[];    // array of numbers
+
+# 2 Object-oriented programming :Another important feature of TS is that we can write object-oriented code.
+ For example, we can define classes and interfaces:
+
+Class & Interface : 
+
+class Student {
+  firstName: String;
+  lastName: String;
+  studentId: number;
+getGrades() {
+      // some code
+  }
+}
+
+We have created a Student class and later we can create instances with the new keyword:
+let student = new Student();     // an instance of Student class
+After assigning the Student( ) object, we don’t need to declare its type again.
+ It will be done automatically by Typescript.
+
+Constructors: 
+In Object-Oriented Programming, we have an important method called constructor( ).
+Every class has actually a default constructor method, and it is called when we create an instance of that class:
+
+
+class Student {
+  firstName: String;
+  lastName: String;
+constructor(firstName?: string, lastName?: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+getGrades() {      
+    // some code
+  }
+}
+
+Access Modifiers:
+
+class Student {
+  private firstName: String;
+  private lastName: String;
+constructor(firstName?: string, lastName?: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+getGrades() {      
+    // some code
+  }
+}
+
+Reference : https://codeburst.io/understanding-typescript-basics-e003dbad2191
+
+
+
+
