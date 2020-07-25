@@ -261,7 +261,10 @@ eg :
    }
 
 
-
-
-
+=> I have to design class in such a way so that the implementation, details should be hidden .In order to achieve these I use private access modifiers .
+=> constructors are not inherited they need to explicitely defined in derived  class . Base class constructors are always execute first 
+=> Upcasting : conversion from derived class to a base class sohoj basai child class theke parent class a convert korake eg : Shape shape = circle 
+=> Downcasting : conversion from base class to derived class sohoj basai parent class theke child class a convert korake eg : Circle circle = (Circle) shape
+=> Boxing : value type ke reference type a convert korake. eg:  object ob = 1 
+=> UnBoxing : reference type ke value type a convert korake. eg:  int i = (int) object 
 
