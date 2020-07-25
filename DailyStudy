@@ -239,7 +239,27 @@ Delegate is a famous way to implement Callback in C#.  But,
 it can also be implemented by Interface. 
 I will explain Callback by Delegate and Interface one by one. 
 
-Callback by Delegate :
+Inheritance vs Composition :
+
+#Inheritance creates tightly coupled relation which causes cahnges in one class may effect many classes 
+eg : public class Order : Product {
+}
+
+#Composition creates loosly coupled relation 
+
+eg : 
+ public class SbOrderController : Controller
+    {
+
+        private IStockBoardOrderService SbOrderService { get; set; } // composition we reuse the code of IStockBoardOrderService
+        // without repeating the code 
+
+        public SbOrderController(IStockBoardOrderService SbOrderService)
+        {
+            this.SbOrderService = SbOrderService;
+        }
+   }
+
 
 
 
