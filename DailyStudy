@@ -129,7 +129,28 @@ When the select clause produces something other than a copy of the source elemen
 The use of projections to transform data is a powerful capability of LINQ query expressions. 
 For more information, see Data Transformations with LINQ (C#) and select clause.
  
-                       
+ 
+Routing :
+
+ routes.MapRoute(
+                name: "O2Rush",  <-- Url Name
+                url: "o2rush",  <-- Url Pattern
+                defaults: new { controller = "Page", action = "Index", id = "O₂Rush_Performance_Air_Filter" } <-- default route 
+            );
+            
+            how to do custome routing :
+            ans : khub es imple amader ichha onujae url name pattern default set korbo then logic implement korbo controller ar actionresult ar modde 
+            eg : Page controller ar Index actionaresult ar moddei amra logic implement korbo o2rus url ar jonno . 
+            remember always put custom routing before default route 
+
+routes.MapRoute(
+                name: "Default",    <-- Url Name
+                url: "{controller}/{action}/{id}",  <-- Url Pattern
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }  <-- default route 
+            );
+ 
+ 
+ 
 Api  :
 dont forget to add [HttpGet] , [HttpPost] ... this http verb attribute before apis  
 api call korar genereal conventaion : /api/controller 
