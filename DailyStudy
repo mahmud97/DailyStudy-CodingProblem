@@ -130,7 +130,7 @@ The use of projections to transform data is a powerful capability of LINQ query 
 For more information, see Data Transformations with LINQ (C#) and select clause.
  
                        
-Api Authentication :
+Api  :
 dont forget to add [HttpGet] , [HttpPost] ... this http verb attribute before apis  
 api call korar genereal conventaion : /api/controller 
 
@@ -151,6 +151,9 @@ public string Get(int id)
 reference :https://www.tutorialsteacher.com/webapi/web-api-controller
 
 }
+
+There are two types of routing in web api : https://www.tutorialsteacher.com/webapi/web-api-routing
+
 
 Identity authentication :
 In this scenario, Web API controllers act as resource servers. An authentication filter validates access tokens, 
