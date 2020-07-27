@@ -132,6 +132,26 @@ For more information, see Data Transformations with LINQ (C#) and select clause.
                        
 Api Authentication :
 
+api call korar genereal conventaion : /api/controller 
+
+example : 
+
+public class ValuesController : ApiController
+{
+public IEnumerable<string> Values()
+{
+            return new string[] { "value1", "value2" };   //atar jonno api call ta hobe https://localhost:portnumber/api/values
+}
+
+public string Get(int id)
+{
+            return "value";  /atar jonno api call ta hobe https://localhost:portnumber/api/values?id=1
+}
+
+reference :https://www.tutorialsteacher.com/webapi/web-api-controller
+
+}
+
 Identity authentication :
 In this scenario, Web API controllers act as resource servers. An authentication filter validates access tokens, 
 and the [Authorize] attribute is used to protect a resource. When a controller or action has the [Authorize] attribute, 
@@ -140,7 +160,7 @@ all requests to that controller or action must be authenticated. Otherwise, auth
 
 eg : Ryco te Identity authentication use kora hoyeche 
 eg : ABC te jwt authentication use kora hoyeche 
-reference : https://www.tutorialsteacher.com/webapi/create-web-api-project
+reference : https://www.tutorialsteacher.com/webapi/web-api-controller
 
 Generics: 
 Generics introduced in C# 2.0. It allows you to define a class with placeholders for the type of its fields,
