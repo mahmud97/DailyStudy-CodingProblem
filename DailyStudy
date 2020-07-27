@@ -131,7 +131,7 @@ For more information, see Data Transformations with LINQ (C#) and select clause.
  
                        
 Api Authentication :
-
+dont forget to add [HttpGet] , [HttpPost] ... this http verb attribute before apis  
 api call korar genereal conventaion : /api/controller 
 
 example : 
