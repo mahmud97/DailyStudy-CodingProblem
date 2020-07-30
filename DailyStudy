@@ -312,3 +312,41 @@ eg :
 => Boxing : value type ke reference type a convert korake. eg:  object ob = 1 
 => UnBoxing : reference type ke value type a convert korake. eg:  int i = (int) object 
 
+
+
+
+IEnumerable - contains only GetEnumerator method to get Enumerator and allows looping
+IEnumerable has one method GetEnumerator() which allows one to read through the values in a collection but not write to it.
+Most of the complexity of using the enumerator is taken care of for us by the for each statement in C#.
+IEnumerable has one property: Current, which returns the current element.
+
+ICollection contains additional methods: Add, Remove, Contains, Count, CopyTo
+ICollection is inherited from IEnumerable
+
+Q: Why use ICollection and not IEnumerable or List<T> on many-many/one-many relationships?
+
+public  class PatientVisit
+{
+public virtual ICollection<PatientDocument> PatientDocuments { get; set; }
+}
+ICollection<T> is used because the IEnumerable<T> interface provides no way of adding items,
+removing items, or otherwise modifying the collection.
+
+Q: How to navigate from one table to another table EF 
+You need to add a Navigation Property to Customer.
+
+public class Customer
+{
+    [Key]
+    [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+    public int CustomerId { get; set; }
+    public string Name { get; set; }
+
+    public virtual ICollection<Product> Products { get; set; }
+}
+
+
+
+
+
+
