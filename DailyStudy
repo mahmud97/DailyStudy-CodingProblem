@@ -345,7 +345,8 @@ public class Customer
     public virtual ICollection<Product> Products { get; set; }
 }
 
-
+Q : When To Use IEnumerable, ICollection, IList And List?
+https://www.claudiobernasconi.ch/2013/07/22/when-to-use-ienumerable-icollection-ilist-and-list/
 
 
 
