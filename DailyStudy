@@ -353,6 +353,13 @@ eg:  ob = JsonConvert.DeserializeObject<Result>(result);
 
 Serialization : inverse of deserialization 
  to convert an object into that string
+ 
+ Structure of a session
+The session can be stored on the server, or on the client. 
+If it's on the client, it will be stored by the browser, most likely in cookies and if it is stored on the server, 
+the session ids are created and managed by the server.
+
+
 
 
 
