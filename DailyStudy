@@ -360,6 +360,12 @@ If it's on the client, it will be stored by the browser, most likely in cookies 
 the session ids are created and managed by the server.
 
 
-
+*****************************************PDCLTelemedicine.App******************************************************
+PDCLTelemedicine.App a MVVM structural design pattern follow kora hoise 
+When Should You Use MVVM ?
+Use this pattern when you need to transform models into another representation for a view. 
+For example, you can use a view model to transform a Date into a date-formatted String, 
+a Decimal into a currency-formatted String, or many other useful transformations.
+To knowmore details about MVVM : https://www.raywenderlich.com/34-design-patterns-by-tutorials-mvvm
 
 
