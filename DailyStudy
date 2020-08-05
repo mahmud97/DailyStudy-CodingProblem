@@ -380,3 +380,17 @@ a Decimal into a currency-formatted String, or many other useful transformations
 To knowmore details about MVVM : https://www.raywenderlich.com/34-design-patterns-by-tutorials-mvvm
 
 
+PDCLTelemedicine.App a
+MVVM design pattern follow kora hoise 
+syncfusion ui component use kora hoise 
+Prism use korsi 
+Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in WPF,
+Windows 10 UWP, and Xamarin Forms. 
+Separate releases are available for each platform and those will be developed on independent timelines.
+https://prismlibrary.com/docs/
+Prism's core functionality is a shared code base
+
+
+
+
+
