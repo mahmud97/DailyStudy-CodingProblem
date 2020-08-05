@@ -360,6 +360,17 @@ If it's on the client, it will be stored by the browser, most likely in cookies 
 the session ids are created and managed by the server.
 
 
+When to use properties instead of functions?
+I tend to use properties if the following are true:
+The property will return a single, logic value
+Little or no logic is involved (typically just return a value, or do a small check/return value)
+
+I tend to use functions if the following are true:
+There is going to be significant work involved in returning the value - ie: it'll get fetched from a DB, or something that may take "time"
+There is quite a bit of logic involved, either in getting or setting the value
+
+
+
 *****************************************PDCLTelemedicine.App******************************************************
 PDCLTelemedicine.App a MVVM structural design pattern follow kora hoise 
 When Should You Use MVVM ?
