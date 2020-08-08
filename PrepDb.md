@@ -50,3 +50,10 @@ public PropertyListsVM GetResidentialPropertyList(int ? page)
             return model;
 
         }
+        
+   # Join Example
+   select s.id , s.namee , t.name , t.coursename
+   from student s join teacher t 
+   on s.id==t.id
+   where t.coursename="algorithm"
+   
