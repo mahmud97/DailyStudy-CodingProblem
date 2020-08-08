@@ -95,15 +95,20 @@ public PropertyListsVM GetResidentialPropertyList(int ? page)
         
    # Stored Procedure with parameters 
     eg: 
-      -  Create PPROCEDURE spGetEmployeeByGenderAndDepartment
-      - @Gender nvarchar(20)
-      - @DepartmentId int
-      -  AS
-      -  BEGIN
-      -       select Name , Gender , DepartmentId from tblEmployee where Gender = @Gender and DepartmentId= @DepartmendId
-      -  END
-        
+        Create PPROCEDURE spGetEmployeeByGenderAndDepartment
+        @Gender nvarchar(20)
+        @DepartmentId int
+        AS
+        BEGIN
+        select Name , Gender , DepartmentId from tblEmployee where Gender = @Gender and DepartmentId= @DepartmendId
+        END
+    
+  - Now if we want to execute store procedure then simply just call it by name with parameter in SQL Server
+        spGetEmployeeByGenderAndDepartment 'Male' , 1 
    
+  # Advantage of Store Procedure 
+ - Code reusability 
+ - Better Maintanability  
    
    
         
