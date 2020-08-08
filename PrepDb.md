@@ -93,8 +93,18 @@ public PropertyListsVM GetResidentialPropertyList(int ? page)
    - Now if we want to execute store procedure then simply just call it by name in SQL Server
         spGetEmployee
         
-    
+   # Stored Procedure with parameters 
+    eg: 
+      -  Create PPROCEDURE spGetEmployeeByGenderAndDepartment
+      - @Gender nvarchar(20)
+      - @DepartmentId int
+      -  AS
+      -  BEGIN
+      -       select Name , Gender , DepartmentId from tblEmployee where Gender = @Gender and DepartmentId= @DepartmendId
+      -  END
         
+   
+   
    
         
         
