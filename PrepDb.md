@@ -57,3 +57,10 @@ public PropertyListsVM GetResidentialPropertyList(int ? page)
    on s.id==t.id
    where t.coursename="algorithm"
    
+   # A cross join can not have on clause 
+   select s.id , s.namee , t.name , t.coursename
+   from student s cross join teacher t
+   
+   ## a cross join return the cartesian product : no of rows first table * no of rows second table 
+   so if first and second table have 3 rows then the result will be 3*3 = 9 rows of cross join 
+   
