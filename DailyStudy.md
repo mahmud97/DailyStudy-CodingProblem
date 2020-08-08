@@ -1,6 +1,8 @@
-#Task : 
-Task asynchronously kaj kore 
-Why we need Tasks? It can be used whenever you want to execute something in parallel. Asynchronous implementation is easy in a task, using’ async’ and ‘await’ keywords.
+#Task  
+Task asynchronously kaj kore .
+
+##Why we need Tasks? 
+It can be used whenever you want to execute something in parallel. Asynchronous implementation is easy in a task, using’ async’ and ‘await’ keywords.
 
 Differences Between Task And Thread
 
