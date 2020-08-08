@@ -84,11 +84,11 @@ public PropertyListsVM GetResidentialPropertyList(int ? page)
    # Stored Procedure 
    - If we have a situation where we have to use the same query again and again then we can simply save the query as stored procedure and call it by name 
    eg: 
-        Create PPROCEDURE spGetEmployee
-        AS
-        BEGIN
-             select Name , Gender from tblEmployee
-        END
+      -  Create PPROCEDURE spGetEmployee
+      -  AS
+      -  BEGIN
+      -       select Name , Gender from tblEmployee
+      -  END
         
    - Now if we want to execute store procedure then simply just call it by name in SQL Server
         spGetEmployee
