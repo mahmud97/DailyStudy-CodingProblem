@@ -1,5 +1,6 @@
+# Linq query Join Example 
 
-public PropertyListsVM GetResidentialPropertyList(int ? page)
+        public PropertyListsVM GetResidentialPropertyList(int ? page)
         {
 
             var ob = new PropertyListsVM();
@@ -114,7 +115,8 @@ public PropertyListsVM GetResidentialPropertyList(int ? page)
         
         
    
-   
+   # Indexes 
+   - We use indexes to find data quickly 
    
    
    
