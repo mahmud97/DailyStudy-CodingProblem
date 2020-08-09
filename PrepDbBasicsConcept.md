@@ -1,5 +1,7 @@
-##### Table of Contents  
+# Table of Contents  
 [Linq query Join Example](#Linq) 
+[Join Example](#Join) 
+
 
 
 
@@ -60,7 +62,9 @@
             return model;
 
         }
-        
+      
+   <a name="Join"/>
+   
    # Join Example
    select s.id , s.namee , t.name , t.coursename
    from student s join teacher t 
