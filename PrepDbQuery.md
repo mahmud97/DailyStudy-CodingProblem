@@ -35,6 +35,16 @@ group by gender
   on s.s_id = m.s_id 
   join details d 
   on d.school_id = m.school_id;
+  
+# FIND THE FIFTH MAX SALARY 
+ans : select top 1 salaray from (select top five salary from Employee order by salary desc) order by salary asc ;
+
+# Find out the employees whose salaries are greater than the salaries of their managers
+ans : SELECT *
+FROM employees w,
+     employees m
+WHERE w.manager_id = m.emp_id
+  AND w.salary> m.salary;
 
 
 
