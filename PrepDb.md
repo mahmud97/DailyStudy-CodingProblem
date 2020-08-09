@@ -148,4 +148,5 @@ Additional Disk Space: Clustered Index does not, require any additional storage.
    
    
    # Normalization 
+   Database normalization is the process of organizing data to minimize data redundancy (data duplication), which in turn ensures data consistency.
    
