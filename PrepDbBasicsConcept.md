@@ -1,6 +1,6 @@
 # Table of Contents  
-[Linq query Join Example](#Linq) 
-[Join Example](#Join) 
+- [Linq query Join Example](#Linq) 
+- [Join Example](#Join) 
 
 
 
