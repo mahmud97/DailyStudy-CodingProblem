@@ -148,5 +148,12 @@ Additional Disk Space: Clustered Index does not, require any additional storage.
    
    
    # Normalization 
-   Database normalization is the process of organizing data to minimize data redundancy (data duplication), which in turn ensures data consistency.
+   - Database normalization is the process of organizing data to minimize data redundancy (data duplication), which in turn ensures data consistency.
+   https://csharp-video-tutorials.blogspot.com/2012/09/database-normalization-part-52.html
    
+   
+- Q : how to normalize ?   Ans : We separate columns from the table which contains redundant data  and create another table with the separated columns
+- Database normalization is a step by step process. There are 6 normal forms, First Normal form (1NF) thru Sixth Normal Form (6NF). Most databases are in third normal form (3NF). There are certain rules, that each normal form should follow.
+
+
+
