@@ -1,4 +1,11 @@
-# Linq query Join Example 
+##### Table of Contents  
+[Linq query Join Example](#Linq) 
+
+
+
+
+<a name="Linq"/>
+## Linq query Join Example 
 
         public PropertyListsVM GetResidentialPropertyList(int ? page)
         {
