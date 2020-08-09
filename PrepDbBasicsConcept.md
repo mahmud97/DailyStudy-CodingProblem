@@ -1,6 +1,8 @@
 # Table of Contents  
 - [Linq query Join Example](#Linq) 
 - [Join Example](#Join) 
+- [Cross Join](#Cross) 
+
 
 
 
@@ -70,6 +72,8 @@
    from student s join teacher t 
    on s.id==t.id
    where t.coursename="algorithm"
+   
+   <a name="Cross"/>
    
    # A cross join can not have on clause 
    select s.id , s.namee , t.name , t.coursename
