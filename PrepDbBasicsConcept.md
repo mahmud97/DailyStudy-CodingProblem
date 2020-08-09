@@ -192,4 +192,10 @@ Additional Disk Space: Clustered Index does not, require any additional storage.
 - Database normalization is a step by step process. There are 6 normal forms, First Normal form (1NF) thru Sixth Normal Form (6NF). Most databases are in third normal form (3NF). There are certain rules, that each normal form should follow.
 
 
+# Query Optimization 
+- there is no hard and first rule of query optimization
+How can I write optimized query ? As much as I know about writing optimized query
+- indexing (clustered , non clustered)
+- Query designing (avoiding asterisk * selecting only the required columns instead of all , avoiding to join different data types as type conversion takes time, etc)
+- Execution plan (This can be achieved using  SQL server tools  
 
