@@ -10,7 +10,7 @@
       from Department d join Employee e
       on d.deptid = e.deptid
       
- # : Write an SQL Query find number of employees according to gender  whose DOB is between 01/01/1960 to 31/12/1975.
+ # Write an SQL Query find number of employees according to gender  whose DOB is between 01/01/1960 to 31/12/1975.
 
 - Ans : Select count(empid) from Employee
 where dob between 01/01/1960 and 31/12/1975
@@ -28,5 +28,13 @@ group by gender
 
 # How do you find all employees which are also manager? You have given a standard employee table with an additional column mgr_id, which contains employee id of the manager.
 - select e.empname from Employee e join Employee m on e.empid==m.mngrid 
+
+# joins multiple table 
+- select s.s_name, m.score, s.status, d.address_city, d.email_id,d.accomplishments 
+  from student s join marks m 
+  on s.s_id = m.s_id 
+  join details d 
+  on d.school_id = m.school_id;
+
 
 
