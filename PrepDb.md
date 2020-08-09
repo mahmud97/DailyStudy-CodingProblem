@@ -117,7 +117,35 @@
    
    # Indexes 
    - We use indexes to find data quickly 
+   - Create Index indexname on tablename (columnname asc) . we can also create index by right click and select new indexes on indexes folder 
+   - To know details : https://csharp-video-tutorials.blogspot.com/2012/09/clustered-and-non-clustered-indexes.html
+   
+   # Clustered Index 
+   - A clustered index determines the physical order of data in a table. For this reason, a table can have only one clustered index. 
+   - Inspite, of inserting the rows in a random order, when we execute the select query we can see that all the rows in the table are 
+    arranged in an ascending order based on the Id column. This is because a clustered index determines the physical order of data in a table, 
+    and we have got a clustered index on the Id column.
+    
+   # Non Clustered Index
+   - A nonclustered index is analogous to an index in a textbook. The data is stored in one place, the index in another place. 
+   - Since, the nonclustered index is stored separately from the actual data, a table can have more than one non clustered index
    
    
+   # Difference between Clustered and NonClustered Index:
+   - Only one clustered index per table, where as you can have more than one non clustered index
+   - Clustered index is faster than a non clustered index, because, the non-clustered index has to refer back to the table, if the selected column is not present in the index.
+   - Clustered index determines the storage order of rows in the table, and hence doesn't require additional disk space, but where as a Non Clustered index is stored seperately   from the table, additional storage space is required.
    
+   # Unique index
+   - Unique index is used to enforce uniqueness of key values in the index
+   - So, the UNIQUE index is used to enforce the uniqueness of values and primary key constraint.
+
+# advantages and disadvantages of indexes
+- Indexes can also help queries, that ask for sorted results. 
+
+# Diadvantages of Indexes:
+Additional Disk Space: Clustered Index does not, require any additional storage. Every Non-Clustered index requires additional space as it is stored separately from the table.The amount of space required will depend on the size of the table, and the number and types of columns used in the index.
+   
+   
+   # Normalization 
    
