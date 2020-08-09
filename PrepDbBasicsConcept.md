@@ -1,7 +1,15 @@
 # Table of Contents  
-- [Linq query Join Example](#Linq) 
+- [Join of Linq query  ](#Linq) 
 - [Join Example](#Join) 
 - [Cross Join](#Cross) 
+- [Ways to replace NULL in sql server ](#Null) 
+- [Union and UnionAll](#Union) 
+- [difference between union and join](#diff) 
+- [Store Procedure   ](#Sp) 
+- [Stored Procedure with parameters](#SpwithPm) 
+- [Advantage of Store Procedure](#advasp) 
+
+
 
 
 
@@ -83,20 +91,28 @@
    - so if first and second table have 3 rows then the result will be 3*3 = 9 rows of cross join 
    - if its a self join lets say table a have five rows then if we self cross join table a it will return 5*5 = 25 
    
+   <a name="Null">
+ 
    # ways to replace NULL in sql server 
    - using ISNULL function we can replace null eg : select ISNULL(NULL, 'No values')
    - now how to use it in query ??
    ans :  select s.id , s.namee , ISNULL(t.name, 'No values') , t.coursename
    from student s cross join teacher t
    
+   <a name="Union">
+    
    # Union and Union All 
    - Union opearation korar jonno 2 ta table ar data type , column name , column name order sob identical hote hobe 
    - UnionAll : unionall korle 2 ta table ar data marge korbe even if the two table have same values 
    Union : union korle 2 ta table ar data marge korbe but not repeat the same value like unionall
    
+   <a name="diff">
+   
    # difference between union and join 
    - Join operation combines columns from two or more tables 
    - Union opearatioin combines rows from two or more tables  
+   
+   <a name="Sp">
    
    # Stored Procedure 
    - If we have a situation where we have to use the same query again and again then we can simply save the query as stored procedure and call it by name 
@@ -110,6 +126,8 @@
    - Now if we want to execute store procedure then simply just call it by name in SQL Server
         spGetEmployee
         
+   <a name="SpwithPm">     
+        
    # Stored Procedure with parameters 
     eg: 
         Create PPROCEDURE spGetEmployeeByGenderAndDepartment
@@ -122,6 +140,8 @@
     
   - Now if we want to execute store procedure then simply just call it by name with parameter in SQL Server
         spGetEmployeeByGenderAndDepartment 'Male' , 1 
+   
+  <a name="advasp"> 
    
   # Advantage of Store Procedure 
  - Code reusability 
