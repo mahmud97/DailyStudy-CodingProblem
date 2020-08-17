@@ -188,6 +188,22 @@ eg : Ryco te Identity authentication use kora hoyeche
 eg : ABC te jwt authentication use kora hoyeche 
 reference : https://www.tutorialsteacher.com/webapi/web-api-controller
 
+difference between identity server and JWT(jason web token) authentication :
+------------
+JWTs
+-----------
+Not stored on the server
+Great for SSO
+Can't be revoked prematurely
+
+
+Identity Bearer Tokens
+--------------
+Stored on the server
+Can be revoked at any time
+Requires a central authority or shared database to share the token across servers
+
+
 Generics: 
 Generics introduced in C# 2.0. It allows you to define a class with placeholders for the type of its fields,
 methods, parameters, etc. Generics replace these placeholders with some specific type at compile time.
