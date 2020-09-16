@@ -8,6 +8,7 @@
 - [Store Procedure   ](#Sp) 
 - [Stored Procedure with parameters](#SpwithPm) 
 - [Advantage of Store Procedure](#advasp) 
+- [Grouping](#grp)
 
 
 
@@ -207,4 +208,9 @@ Additional Disk Space: Clustered Index does not, require any additional storage.
 eg: 
    where cust.City == "London" && cust.Name == "Devon"
 
-
+<a name="grp"/>
+   
+   # Grouping 
+   The group clause enables you to group your results based on a key that you specify. 
+   For example you could specify that the results should be grouped by the City so that all customers from London or Paris are in individual groups. 
+   In this case, cust.City is the key.
