@@ -217,3 +217,16 @@ eg:
    
    When you end a query with a group clause, your results take the form of a list of lists. 
    Each element in the list is an object that has a Key member and a list of elements that are grouped under that key.
+   
+   - If you must refer to the results of a group operation, you can use the into keyword to create an identifier that can be queried further. 
+   The following query returns only those groups that contain more than two customers:
+   // custQuery is an IEnumerable<IGrouping<string, Customer>>
+   var custQuery =
+    from cust in customers
+    group cust by cust.City into custGroup
+    where custGroup.Count() > 2
+    orderby custGroup.Key
+    select custGroup;
+    
+    
+    
