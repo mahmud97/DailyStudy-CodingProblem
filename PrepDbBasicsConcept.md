@@ -214,3 +214,6 @@ eg:
    The group clause enables you to group your results based on a key that you specify. 
    For example you could specify that the results should be grouped by the City so that all customers from London or Paris are in individual groups. 
    In this case, cust.City is the key.
+   
+   When you end a query with a group clause, your results take the form of a list of lists. 
+   Each element in the list is an object that has a Key member and a list of elements that are grouped under that key.
