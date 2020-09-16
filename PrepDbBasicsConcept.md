@@ -221,7 +221,7 @@ eg:
    - If you must refer to the results of a group operation, you can use the into keyword to create an identifier that can be queried further. 
    The following query returns only those groups that contain more than two customers:
    // custQuery is an IEnumerable<IGrouping<string, Customer>>
-                     var custQuery =
+   -                 var custQuery =
                      from cust in customers
                      group cust by cust.City into custGroup
                      where custGroup.Count() > 2
