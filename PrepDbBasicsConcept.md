@@ -205,6 +205,6 @@ Additional Disk Space: Clustered Index does not, require any additional storage.
 - You can use the familiar C# logical AND and OR operators to apply as many filter expressions as necessary in the where clause. For example, to return only customers from "London" AND whose name is "Devon" you would write the following code:
 
 eg: 
-  - where cust.City == "London" && cust.Name == "Devon"
+   where cust.City == "London" && cust.Name == "Devon"
 
 
