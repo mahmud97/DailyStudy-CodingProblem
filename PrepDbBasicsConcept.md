@@ -199,3 +199,8 @@ Additional Disk Space: Clustered Index does not, require any additional storage.
 - Query designing (avoiding asterisk * selecting only the required columns instead of all , avoiding to join different data types as type conversion takes time, etc)
 - Execution plan (This can be achieved using  SQL server tools  
 
+
+# Query Filter
+-  using where clause we filter data in query
+
+
