@@ -221,12 +221,14 @@ eg:
    - If you must refer to the results of a group operation, you can use the into keyword to create an identifier that can be queried further. 
    The following query returns only those groups that contain more than two customers:
    // custQuery is an IEnumerable<IGrouping<string, Customer>>
-   - var custQuery =
-    from cust in customers
-    group cust by cust.City into custGroup
-    where custGroup.Count() > 2
-    orderby custGroup.Key
-    select custGroup;
+   -                 var custQuery =
+                     from cust in customers
+                     group cust by cust.City into custGroup
+                     where custGroup.Count() > 2
+                     orderby custGroup.Key
+                     select custGroup;
     
+  # Selecting (Projections)
+  - The select clause produces the results of the query and specifies the "shape" or type of each returned element. For example, you can specify whether your results will      consist of complete Customer objects, just one member, a subset of members, or some completely different result type based on a computation or new object creation. When the  select clause produces something other than a copy of the source element, the operation is called a projection. The use of projections to transform data is a powerful capability of LINQ query expressions.
     
     
