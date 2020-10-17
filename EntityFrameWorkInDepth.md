@@ -208,7 +208,7 @@ var qry = from c in ctx.Course
 
 
 
-<a name="SETUPDATABASE"/>
+<a name="d"/>
 
 # Different LINQ Query In Action using Extension Methods:
 
