@@ -4,6 +4,9 @@
 - [CODE FIRST USE KORE EXISTING DB IMPORT KORBO KIBABE ?](#EDB)
 - [DETAILS ABOUT MIGRATION ](#DETAILS)
 - [LINQ QUERY IN ACTION ](#LINQ)
+- [LINQ QUERY EXAMPLES ](#EXAMPLES)
+
+
    
 
 <a name="SETUPDATABASE"/>
@@ -125,6 +128,38 @@ foreach(var courses in qry)
 {
 console.WriteLine(courses.Name);
 }
+
+
+<a name="EXAMPLES"/>
+
+# LINQ QUERY EXAMPLES
+
+## 1. Restriction using Where
+- var qry = from c in ctx.Courses 
+	
+	where c.Name.Contains("c#") && c.Author=="Mahmud"  
+	
+	select c
+	
+	
+## 2.Ordering using orderby keyword
+
+- var qry = from c in ctx.Courses 
+	
+	where c.Name.Contains("c#")
+	
+	orderby c.Name,c.Level
+	
+	select c ;
+	
+	
+## 3.Projection which is a optimization 
+- var qry = from c in ctx.Courses 
+	
+	select new {Name = c.Name}; ---> Instead of selecting all the features we are just selecting the required feature 
+
+
+## 
 
 
 
