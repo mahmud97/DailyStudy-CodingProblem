@@ -56,4 +56,36 @@ existed db ef code first diye import korle then add-migration whatever -Ignorech
 <a name="DETAILS"/>
 
 # DETAILS ABOUT MIGRATION 
+- Add migration command run korar por always migrationfile ta dekhba then update command run korba 
+- Adding a class into the db also need migration . 
+so its better to migrate after each changes lets say if you 
+add new two classes in db then its better to migrate after adding a class
+rathe than after adding too many classes 
+- doro bule akta empty migration kore fella
+mane dbset add koro nai tai empty migration 
+akhn ai same name ai migration ta thik korte parba 
+jodi _Force use koro . 
+for eg :  add-migration migrationname -Force   
+
+- table kisu demo data kibabe generate korbo ?
+migration ar up method ar bitor sql statement diye
+- amra jodi identity genrated id na chai tahole identitygeneratedoption.none dilei hobe 
+- db model a jodi change kori tahole obossoi migration lagbe but view model a change korle migration lagbe na 
+karon view model to temporary atato db te kono effect fele na ba data o store kore na 
+- Migration also requires when modifying an existing class or renaming a field name 
+- Datetime is bydefault required type so inorder to allow null value 
+make it nullable like this public DateTime? StartDate {get ;set;} 
+- akta field name rename kore migration korte gele khub e careful 
+lets say age akta field chilo Title akhn rename kore Name field korsi
+add-migration run korar por up method a dekhba je Name column add kortese ar 
+Title column drop kortese so Title column a joto chilo sob amra haraya felbo
+so ata avoid korar jonno amra Sql("Update tablename set Name =Title");
+also downmethod a reverse ta likhbo  Sql("Update tablename set Title =Name");
+- deleting column also requires migration but thats straight forward 
+- bul kore migration korle oi migration ta delete na kore arekta notun migration korbo (also learn how to revert migration )
+- Downgrafing a Database :  lets say I have eight migrations and I want to keep migration till sixth migrration 
+so inorder to do that I have to run : update-database - TargetMigration:SixthMigrationName
+- there are two types of migration code first and automatic migration we always 
+disable or set false in automatic migration as this is risky in production db 
+
 
