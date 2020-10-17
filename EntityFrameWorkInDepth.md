@@ -3,6 +3,7 @@
 - [HOW EF HANDLES MANY TO MANY RELATIONSHIP?](#RELATIONSHIP)
 - [CODE FIRST USE KORE EXISTING DB IMPORT KORBO KIBABE ?](#EDB)
 - [DETAILS ABOUT MIGRATION ](#DETAILS)
+- [LINQ QUERY IN ACTION ](#LINQ)
    
 
 <a name="SETUPDATABASE"/>
@@ -87,5 +88,43 @@ also downmethod a reverse ta likhbo  Sql("Update tablename set Title =Name");
 so inorder to do that I have to run : update-database - TargetMigration:SixthMigrationName
 - there are two types of migration code first and automatic migration we always 
 disable or set false in automatic migration as this is risky in production db 
+
+
+<a name="LINQ"/>
+
+#  LINQ QUERY IN ACTION
+## there are two ways to write linq query both returns the same result lets see 
+- Way 1 :using Linq syntex 
+
+var ctx = new MainDbContext();
+
+var qry = from c in ctx.Courses 
+	
+   where c.Name.Contains("c#")
+	
+   orderby c.Name
+	
+   select c ;
+
+now iterate through qry oobject 
+foreach(var courses in qry)
+{
+console.WriteLine(courses.Name);
+}
+
+- Way 2 : using Extension Methods
+
+var qry = ctx.Courses
+       .where(c=>c.Name.Contains("c#"))
+	.orderby c.Name;
+
+Here returns all the objects which match the condition but we use singleordefault ot firstordefault in that case it will retun only one object 
+
+now iterate through qry oobject 
+foreach(var courses in qry)
+{
+console.WriteLine(courses.Name);
+}
+
 
 
