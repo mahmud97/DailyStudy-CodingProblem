@@ -191,7 +191,7 @@ var qry = from c in ctx.Authors
 	  select new{ AuthorName = a.Name, Courses = g.Count()};
 	  
 	  
-## cross join return all possible combination
+## iii. cross join return all possible combination
 - same as sql . lets see an example :
 
 var qry = from c in ctx.customers
@@ -208,5 +208,70 @@ var qry = from c in ctx.Course
 
 
 
+Different LINQ Query In Action using Extension Methods:
 
+
+1.Restriction 
+var qry = ctx.Courses.where(c=>c.Level==1) ;
+
+2.Ordering using orderby keyword
+
+var qry = ctx.Courses.where(c=>c.Level==1).orderby(c=>c.Name).ThenBy(c=>c.level) ;
+
+3.Projection which is a optimization 
+
+var qry = ctx.Courses.
+	where(c=>c.Level==1).
+	orderby(c=>c.Name).
+	ThenBy(c=>c.level).
+	Select(c=> new {CourseName = c.Name ,AuthorName = c.Author.Name  } );
+
+if you wanna flatened a list then use selectmany 
+
+there are also groupby,join and other feature in extension method see on net for details 
+
+
+LINQ Extension Methods Additional Methods
+
+Partitioning : 
+
+var courses =ctx.corses.Skip(10).Take(10);
+
+Element opearators : 
+
+FirstOrDefaults() , First() , LastorDefault() , Last(),single(), SingleOrDefault()  but 
+remember in sql server there is no method to get last record so if you wanna get last record 
+sort them in a descending order then take the first element 
+
+we can just use them as it is or we can put condition also like 
+var courses =ctx.corses.FirstOrDefaults(c=>c.Price>100)
+
+
+
+Quantifying : 
+
+All() , any ()
+
+var courses =ctx.corses.All(c=>c.Price>100)
+
+
+Aggregating :
+
+Max ,Min . Average 
+
+Deferred Execution :
+
+Queries are not executed when we create them 
+rather Query executed when 
+
+1.Iterating over query variable 
+2.calling ToList ,ToArray, TODictionary 
+3.Calling First , laST, SingleOrDefault ,Count , MAx 
+
+Ienumerrable : 
+We can enumerate on these using a loop and can get each item 
+ string (we can get each character of list), 
+array(we can get each item of array) , 
+list (we can get each item of list),
+Dictionary(we can get each item of Dictionary)
 
