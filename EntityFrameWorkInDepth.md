@@ -159,7 +159,54 @@ console.WriteLine(courses.Name);
 	select new {Name = c.Name}; ---> Instead of selecting all the features we are just selecting the required feature 
 
 
-## 
+## 4. Groupby : there is adifferenc between sql group and linq group by
+## in linq we dont need to use any aggregiate function but in sql we need 
+- var qry = from c in ctx.Courses
+	  group c by c.level
+	  into g 
+	  select g ; 
+
+## 5. Joining 
+ There are three types of joining in linq 
+## i.Inner Join 
+
+var qry = from c in ctx.customers
+	  
+	  join a in ctx.Authors
+	  
+	  on c.Id equals a.aId
+	  
+	  select new{Name = c.Name , AuthorName = a.Name};
+
+## ii.group join
+
+- gorup join does not have equla in sql.
+We use group join in situation where left
+join needed
+
+var qry = from c in ctx.Authors
+	  
+	  join c in ctx.Customers
+	  on a.aId equals c.AuthorId into g 
+	  select new{ AuthorName = a.Name, Courses = g.Count()};
+	  
+	  
+## cross join return all possible combination
+- same as sql . lets see an example :
+
+var qry = from c in ctx.customers
+	  
+	  from a in ctx.Authors
+	  select new{CustomerName = c.Name , AuthorName = a.Name};
+	  
+##  We dont need to join two tables to display the result in linq query 
+we can easily display the result from two tables using navigation property 
+lets see in action 
+var qry = from c in ctx.Course
+	  select new {CoursseName = c.Name , AuthorName =c.Author.Name }
+
+
+
 
 
 
