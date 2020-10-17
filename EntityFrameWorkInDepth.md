@@ -260,7 +260,7 @@ var courses =ctx.corses.All(c=>c.Price>100)
 
 Max ,Min . Average 
 
-- Deferred Execution :
+## Deferred Execution :
 
 - Queries are not executed when we create them 
 rather Query executed when 
@@ -269,7 +269,7 @@ rather Query executed when
 2.calling ToList ,ToArray, TODictionary 
 3.Calling First , laST, SingleOrDefault ,Count , MAx 
 
-- Ienumerrable : 
+## Ienumerrable : 
 We can enumerate on these using a loop and can get each item 
  string (we can get each character of list), 
 array(we can get each item of array) , 
