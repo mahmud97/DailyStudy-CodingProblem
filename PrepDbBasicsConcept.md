@@ -33,12 +33,12 @@
                       join afs in context.ArForSale on ap.ListingId equals afs.ListingId
                       join c in context.Clients on al.ListingId equals c.ClientId
                       join afr in context.ArForRent on al.ListingId equals afr.ListingId
-                      where al.ListingType == 1 &&
+                      where al.ListingType == 1 &&  --->Restriction using where keyword
                       (!string.IsNullOrEmpty(aid.FileName)) &&
                       (afs.Price != null) &&
                       (ap.LandSizeSqm != null && ap.Bedroom != null && ap.Bathroom != null && ap.Carport != null)
-                      orderby ap.ListingId, afs.PriceRangeFrom,afs.Price
-                      select new PropertyLists
+                      orderby ap.ListingId, afs.PriceRangeFrom,afs.Price  --->Ordering using orderby
+                      select new PropertyLists                --->Projection 
                       {
                           ListingId = ap.ListingId,
                           Bedroom = ap.Bedroom,
