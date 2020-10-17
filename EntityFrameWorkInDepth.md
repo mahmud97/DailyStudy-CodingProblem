@@ -5,6 +5,7 @@
 - [DETAILS ABOUT MIGRATION ](#DETAILS)
 - [LINQ QUERY IN ACTION ](#LINQ)
 - [LINQ QUERY EXAMPLES ](#EXAMPLES)
+- [Different LINQ Query In Action using Extension Methods ](#d)
 
 
    
@@ -207,68 +208,68 @@ var qry = from c in ctx.Course
 
 
 
+<a name="SETUPDATABASE"/>
 
-Different LINQ Query In Action using Extension Methods:
+# Different LINQ Query In Action using Extension Methods:
 
 
-1.Restriction 
+## 1.Restriction 
 var qry = ctx.Courses.where(c=>c.Level==1) ;
 
-2.Ordering using orderby keyword
+## 2.Ordering using orderby keyword
 
 var qry = ctx.Courses.where(c=>c.Level==1).orderby(c=>c.Name).ThenBy(c=>c.level) ;
 
-3.Projection which is a optimization 
+## 3.Projection which is a optimization 
 
 var qry = ctx.Courses.
+	
 	where(c=>c.Level==1).
 	orderby(c=>c.Name).
 	ThenBy(c=>c.level).
 	Select(c=> new {CourseName = c.Name ,AuthorName = c.Author.Name  } );
 
-if you wanna flatened a list then use selectmany 
+## if you wanna flatened a list then use selectmany 
 
-there are also groupby,join and other feature in extension method see on net for details 
+- there are also groupby,join and other feature in extension method see on net for details 
 
 
-LINQ Extension Methods Additional Methods
+## LINQ Extension Methods Additional Methods
 
-Partitioning : 
+- Partitioning : 
 
 var courses =ctx.corses.Skip(10).Take(10);
 
-Element opearators : 
+- Element opearators : 
 
 FirstOrDefaults() , First() , LastorDefault() , Last(),single(), SingleOrDefault()  but 
 remember in sql server there is no method to get last record so if you wanna get last record 
 sort them in a descending order then take the first element 
-
 we can just use them as it is or we can put condition also like 
 var courses =ctx.corses.FirstOrDefaults(c=>c.Price>100)
 
 
-
-Quantifying : 
+- Quantifying : 
 
 All() , any ()
 
 var courses =ctx.corses.All(c=>c.Price>100)
 
 
-Aggregating :
+- Aggregating :
 
 Max ,Min . Average 
 
-Deferred Execution :
+- Deferred Execution :
 
-Queries are not executed when we create them 
+- Queries are not executed when we create them 
 rather Query executed when 
 
 1.Iterating over query variable 
 2.calling ToList ,ToArray, TODictionary 
 3.Calling First , laST, SingleOrDefault ,Count , MAx 
 
-Ienumerrable : 
+- Ienumerrable : 
 We can enumerate on these using a loop and can get each item 
  string (we can get each character of list), 
 array(we can get each item of array) , 
