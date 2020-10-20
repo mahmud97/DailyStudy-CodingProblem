@@ -28,29 +28,33 @@ In c#, by default all the methods are non-virtual and we cannot override non-vir
 How do I use AutoMapper?
 
 - First, you need both a source and destination type to work with.
-var config = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderDto>());
+    
+      var config = new MapperConfiguration(cfg => cfg.CreateMap<Order, OrderDto>());
 
 - secondly To perform a mapping, call one of the Map overloads:
-var mapper = config.CreateMapper();
+      
+      var mapper = config.CreateMapper();
 // or
-var mapper = new Mapper(config);
-OrderDto dto = mapper.Map<OrderDto>(order);
+
+      var mapper = new Mapper(config);
+      OrderDto dto = mapper.Map<OrderDto>(order);
 
 # T:
 ## What does <T> denote in C# ?
 
 - A generic type parameter allows you to specify an arbitrary type T to a method at compile-time, without specifying a concrete type in the method or class declaration.
-public T[] Reverse<T>(T[] array)
-{
-    var result = new T[array.Length];
-    int j=0;
-    for(int i=array.Length - 1; i>= 0; i--)
-    {
-        result[j] = array[i];
-        j++;
-    }
-    return result;
-}
+      
+      public T[] Reverse<T>(T[] array)
+       {
+           var result = new T[array.Length];
+           int j=0;
+           for(int i=array.Length - 1; i>= 0; i--)
+           {
+               result[j] = array[i];
+               j++;
+           }
+           return result;
+       }
 The key point here is that the array elements can be of any type, and the function will still work. You specify the type in the method call; type safety is still guaranteed.
 
 
@@ -67,21 +71,21 @@ You can also explicitly specify the associated constant values, as the following
 - The IDisposable interface has one public method called Dispose that is used to dispose of the object. When we use the using statement,
 we don't need to explicitly dispose of the object in the code, the using statement takes care of it.
 
-using (SqlConnection conn = new SqlConnection())
-{
+     using (SqlConnection conn = new SqlConnection())
+     {
 
-}
+     }
 
-When we use the above block, internally the code is generated like this:
-SqlConnection conn = new SqlConnection() 
-try
-{
+     When we use the above block, internally the code is generated like this:
+     SqlConnection conn = new SqlConnection() 
+     try
+     {
 
-}
-finally
-{
-    // calls the dispose method of the conn object
-}
+     }
+     finally
+     {
+         // calls the dispose method of the conn object
+     }
 
 
 # Linq: 
@@ -89,16 +93,18 @@ finally
 - Obtaining a Data Source:
 
 In a LINQ query, the from clause comes first in order to introduce the data source (customers) and the range variable (cust).
-var queryAllCustomers = from cust in customers
-                        select cust;
+     
+     var queryAllCustomers = from cust in customers
+                            select cust;
      
      
 - Filtering:
 
 where is used to filter 
-var queryLondonCustomers = from cust in customers
-                           where cust.City == "London"
-                           select cust;
+
+    var queryLondonCustomers = from cust in customers
+                                where cust.City == "London"
+                                select cust;
                            
     var qry = from cc in ctx.Categories
               join cd in ctx.CategoryDetails on cc.Id equals cd.CategoryId
@@ -109,18 +115,18 @@ The orderby clause will cause the elements in the returned sequence to be sorted
 For example, the following query can be extended to sort the results based on the Name property. 
 Because Name is a string, the default comparer performs an alphabetical sort from A to Z.
 
-var queryLondonCustomers3 =
-    from cust in customers
-    where cust.City == "London"
-    orderby cust.Name ascending
-    select cust;
+     var queryLondonCustomers3 =
+         from cust in customers
+         where cust.City == "London"
+         orderby cust.Name ascending
+         select cust;
     
     
  - Grouping:
  
- var queryCustomersByCity =
-      from cust in customers
-      group cust by cust.City;
+        var queryCustomersByCity =
+             from cust in customers
+             group cust by cust.City;
       
       
  - Selecting (Projections):
@@ -134,42 +140,43 @@ For more information, see Data Transformations with LINQ (C#) and select clause.
  
 # Routing :
 
- - routes.MapRoute(
-                name: "O2Rush",  <-- Url Name
-                url: "o2rush",  <-- Url Pattern
-                defaults: new { controller = "Page", action = "Index", id = "O₂Rush_Performance_Air_Filter" } <-- default route 
-            );
+     routes.MapRoute(
+                   name: "O2Rush",  <-- Url Name
+                   url: "o2rush",  <-- Url Pattern
+                   defaults: new { controller = "Page", action = "Index", id = "O₂Rush_Performance_Air_Filter" } <-- default route 
+               );
             
-            how to do custome routing :
-            ans : khub es imple amader ichha onujae url name pattern default set korbo then logic implement korbo controller ar actionresult ar modde 
-            eg : Page controller ar Index actionaresult ar moddei amra logic implement korbo o2rus url ar jonno . 
-            remember always put custom routing before default route 
+  how to do custome routing :
+  ans : khube  simple amader ichha onujae url name, pattern default set korbo then logic implement korbo controller ar actionresult ar modde 
+  eg : Page controller ar Index actionaresult ar moddei amra logic implement korbo o2rus url ar jonno . 
+   remember always put custom routing before default route 
 
-routes.MapRoute(
-                name: "Default",    <-- Url Name
-                url: "{controller}/{action}/{id}",  <-- Url Pattern
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }  <-- default route 
-            );
+     routes.MapRoute(
+                     name: "Default",    <-- Url Name
+                     url: "{controller}/{action}/{id}",  <-- Url Pattern
+                     defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }  <-- default route 
+                 );
  
  
  
 # Api  :
 - dont forget to add [HttpGet] , [HttpPost] ... this http verb attribute before apis  
-api call korar genereal conventaion : /api/controller 
+           
+           api call korar genereal conventaion : /api/controller 
 
 - example : 
 
-public class ValuesController : ApiController
-{
-public IEnumerable<string> Values()
-{
-            return new string[] { "value1", "value2" };   //atar jonno api call ta hobe https://localhost:portnumber/api/values
-}
+       public class ValuesController : ApiController
+       {
+       public IEnumerable<string> Values()
+       {
+                   return new string[] { "value1", "value2" };   //atar jonno api call ta hobe https://localhost:portnumber/api/values
+       }
 
-public string Get(int id)
-{
-            return "value";  /atar jonno api call ta hobe https://localhost:portnumber/api/values?id=1
-}
+       public string Get(int id)
+       {
+                   return "value";  /atar jonno api call ta hobe https://localhost:portnumber/api/values?id=1
+       }
 
 reference :https://www.tutorialsteacher.com/webapi/web-api-controller
 
@@ -184,7 +191,7 @@ and the [Authorize] attribute is used to protect a resource. When a controller o
 all requests to that controller or action must be authenticated. Otherwise, authorization is denied, and Web API returns a 401 (Unauthorized) error.
 
 
-eg : Ryco te Identity authentication use kora hoyeche 
+- eg : Ryco te Identity authentication use kora hoyeche 
 eg : ABC te jwt authentication use kora hoyeche 
 reference : https://www.tutorialsteacher.com/webapi/web-api-controller
 
@@ -205,7 +212,7 @@ Requires a central authority or shared database to share the token across server
 
 
 # Generics: 
--Generics introduced in C# 2.0. It allows you to define a class with placeholders for the type of its fields,
+- Generics introduced in C# 2.0. It allows you to define a class with placeholders for the type of its fields,
 methods, parameters, etc. Generics replace these placeholders with some specific type at compile time.
 
 - Advantages of Generics
@@ -243,16 +250,16 @@ let array: number[];    // array of numbers
 # 2 Object-oriented programming :Another important feature of TS is that we can write object-oriented code.
  For example, we can define classes and interfaces:
 
-Class & Interface : 
+     Class & Interface : 
 
-class Student {
-  firstName: String;
-  lastName: String;
-  studentId: number;
-getGrades() {
-      // some code
-  }
-}
+     class Student {
+       firstName: String;
+       lastName: String;
+       studentId: number;
+     getGrades() {
+           // some code
+       }
+     }
 
 - We have created a Student class and later we can create instances with the new keyword:
 let student = new Student();     // an instance of Student class
@@ -264,31 +271,31 @@ In Object-Oriented Programming, we have an important method called constructor( 
 Every class has actually a default constructor method, and it is called when we create an instance of that class:
 
 
-class Student {
-  firstName: String;
-  lastName: String;
-constructor(firstName?: string, lastName?: string) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-getGrades() {      
-    // some code
-  }
-}
+    class Student {
+      firstName: String;
+      lastName: String;
+    constructor(firstName?: string, lastName?: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+      }
+    getGrades() {      
+        // some code
+      }
+    }
 
 Access Modifiers:
 
-class Student {
-  private firstName: String;
-  private lastName: String;
-constructor(firstName?: string, lastName?: string) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-getGrades() {      
-    // some code
-  }
-}
+    class Student {
+      private firstName: String;
+      private lastName: String;
+    constructor(firstName?: string, lastName?: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+      }
+    getGrades() {      
+        // some code
+      }
+    }
 
 - Reference : https://codeburst.io/understanding-typescript-basics-e003dbad2191
 
@@ -310,7 +317,8 @@ eg : public class Order : Product {
 #Composition creates loosly coupled relation 
 
 eg : 
- public class SbOrderController : Controller
+    
+    public class SbOrderController : Controller
     {
 
         private IStockBoardOrderService SbOrderService { get; set; } // composition we reuse the code of IStockBoardOrderService
@@ -324,11 +332,11 @@ eg :
 
 
 - I have to design class in such a way so that the implementation, details should be hidden .In order to achieve these I use private access modifiers .
-=> constructors are not inherited they need to explicitely defined in derived  class . Base class constructors are always execute first 
-=> Upcasting : conversion from derived class to a base class sohoj basai child class theke parent class a convert korake eg : Shape shape = circle 
-=> Downcasting : conversion from base class to derived class sohoj basai parent class theke child class a convert korake eg : Circle circle = (Circle) shape
-=> Boxing : value type ke reference type a convert korake. eg:  object ob = 1 
-=> UnBoxing : reference type ke value type a convert korake. eg:  int i = (int) object 
+- constructors are not inherited they need to explicitely defined in derived  class . Base class constructors are always execute first 
+- Upcasting : conversion from derived class to a base class sohoj basai child class theke parent class a convert korake eg : Shape shape = circle 
+- Downcasting : conversion from base class to derived class sohoj basai parent class theke child class a convert korake eg : Circle circle = (Circle) shape
+- Boxing : value type ke reference type a convert korake. eg:  object ob = 1 
+- UnBoxing : reference type ke value type a convert korake. eg:  int i = (int) object 
 
 
 
@@ -343,25 +351,25 @@ ICollection is inherited from IEnumerable
 
 - Q: Why should we use ICollection and not IEnumerable or List<T> on many-many/one-many relationships?
 
-public  class PatientVisit
-{
-public virtual ICollection<PatientDocument> PatientDocuments { get; set; }
-}
-ICollection<T> is used because the IEnumerable<T> interface provides no way of adding items,
-removing items, or otherwise modifying the collection.
+      public  class PatientVisit
+      {
+      public virtual ICollection<PatientDocument> PatientDocuments { get; set; }
+      }
+      ICollection<T> is used because the IEnumerable<T> interface provides no way of adding items,
+      removing items, or otherwise modifying the collection.
 
 - Q: How to navigate from one table to another table EF 
 You need to add a Navigation Property to Customer.
 
-public class Customer
-{
-    [Key]
-    [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-    public int CustomerId { get; set; }
-    public string Name { get; set; }
+    public class Customer
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int CustomerId { get; set; }
+        public string Name { get; set; }
 
-    public virtual ICollection<Product> Products { get; set; }
-}
+        public virtual ICollection<Product> Products { get; set; }
+    }
 
 - Q : When To Use IEnumerable, ICollection, IList And List?
 https://www.claudiobernasconi.ch/2013/07/22/when-to-use-ienumerable-icollection-ilist-and-list/
