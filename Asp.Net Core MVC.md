@@ -26,3 +26,6 @@ connection string configured in appsettings.json
 
 # Register the database context
 - https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-model?view=aspnetcore-3.1&tabs=visual-studio
+
+# ASP.NET Core MVC Series
+- https://code-maze.com/asp-net-core-mvc-series/
