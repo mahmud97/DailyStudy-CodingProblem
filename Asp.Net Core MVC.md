@@ -23,3 +23,6 @@ connection string configured in appsettings.json
 
 # Add search to ASP.NET Core Razor Pages
 - https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/search?view=aspnetcore-3.1
+
+# Register the database context
+- https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-model?view=aspnetcore-3.1&tabs=visual-studio
