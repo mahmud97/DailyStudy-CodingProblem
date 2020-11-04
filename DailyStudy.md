@@ -160,6 +160,7 @@ For more information, see Data Transformations with LINQ (C#) and select clause.
  
  
 # Api  :
+- Read on rest api https://www.syncfusion.com/blogs/post/how-to-build-crud-rest-apis-with-asp-net-core-3-1-and-entity-framework-core-create-jwt-tokens-and-secure-apis.aspx
 - dont forget to add [HttpGet] , [HttpPost] ... this http verb attribute before apis  
            
            api call korar genereal conventaion : /api/controller 
