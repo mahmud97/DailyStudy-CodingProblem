@@ -143,3 +143,28 @@ simplest eg of controller.
  # AngularJS Routing
  - see details : https://www.tutorialsteacher.com/angularjs/angularjs-routing
  
+ # Angular js By Udemy 
+ 
+       var myApp = angular.module('myApp',[]); here we put dpendencies inside []
+       myApp.controller('mainController',function(){
+       });
+ 
+ # Dependency injection
+ - in a plain words : passing an object to the function instead of creating one inside it .
+ 
+ # $Scope Service
+ var myApp = angular.module('myApp',[]); here we put dpendencies inside []
+       myApp.controller('mainController',function($scope){
+       $scope.name ="test name";
+       $scope.getname = function(){
+       return 'mahmud';
+       }
+       console.log($scope);
+       });
+ 
+ - There are other services like $log, $filter and other services like messages services 
+ - for example ami message service use korte chai tahole message service ar 
+ js file ta add korbo then dependencies ar modde message service declae kore dibo as 
+message service ar upor dependent like  ['ngMessages']
+ 
+ 
