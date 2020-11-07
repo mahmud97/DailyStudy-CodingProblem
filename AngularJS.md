@@ -143,6 +143,7 @@ simplest eg of controller.
  # AngularJS Routing
  - see details : https://www.tutorialsteacher.com/angularjs/angularjs-routing
  
+ _________________________________________________________________________________________________________________________________
  # Angular js By Udemy 
  
        var myApp = angular.module('myApp',[]); here we put dpendencies inside []
@@ -153,6 +154,8 @@ simplest eg of controller.
  - in a plain words : passing an object to the function instead of creating one inside it .
  
  # $Scope Service
+
+- Angular js service ar age $ sign thake for eg: $scope
 
       var myApp = angular.module('myApp',[]); here we put dpendencies inside []
              myApp.controller('mainController',function($scope){
@@ -194,9 +197,74 @@ message service ar upor dependent like  ['ngMessages']
  - I definitely shrink javascript and css during deployment 
  - in dependency injection order matters in angular js 
  
- # Data binding and Directives 
- - 
+ # Data Binding and Directives
  
+ ## Scope and Interpolation 
+      
+      In .js file
+      var myApp = angular.module('myApp',[]); 
+             myApp.controller('mainController',['$scope',function($scope){
+
+             $scope.name = "Test"
+             }]);
+             
+             
+        In html file
+       <body ng-app="myApp">
+          <div ng-controller="mainController">
+              {{name}}
+          </div>
+      </body>
+ 
+ ## Directives and Two way data bindings 
+ - directive : an instrucction to angular js to manipulate dom . fpr eg : add a class or hide this create this etc
+ - example of some directives : ng-controller , ng-app , ng-model
+ -Two data binding means whatever I am changing in html it is affecting in js and also vice versa 
+ 
+ - example of data binding through directives 
+ 
+        In .js file
+            var myApp = angular.module('myApp',[]); 
+                   myApp.controller('mainController',['$scope',function($scope){
+
+                   $scope.handle= ""
+                   }]);
+             
+             
+        In html file
+       <body ng-app="myApp">
+          <div ng-controller="mainController">
+              <input ype="text" ng-model ="handle"> //using ng model directive we are binding data from js file
+          </div>
+          <label>his name is :{{handle}}</label>
+      </body>
       
 
- 
+## JavaScript aside the event loop
+- examples of some of the event call keypress, click , mosueover, change 
+
+# Common Directives 
+- ng-if , ng-show , ng-class , ng-repeat , ng-click
+
+# XMLHTTPRequest Object
+- thats not a good way to fetch data rather we will use builtin 
+angular js http service
+
+# In Angular js get and post data from controller using $HTTP service 
+- So we use $http service to get data from controller or backend 
+- eg:get 
+
+        var myApp = angular.module('myApp',[]); 
+                         myApp.controller('mainController',['$scope','$http',function($scope,$http){
+
+                        $http.get('api path').success(function(result){
+                        $scope.rules = result ;
+                        
+                        });
+                       
+                         }]);
+
+- post ar khetre view theke data ta nibo then js theke http use kore 
+api te data pathabo 
+
+
