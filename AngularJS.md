@@ -267,4 +267,43 @@ angular js http service
 - post ar khetre view theke data ta nibo then js theke http use kore 
 api te data pathabo 
 
+# routing and templates 
+
+        var myApp = angular.module('myApp',['ngRoute']); 
+                            
+
+      .when('/second/:num'){
+      teplateURl:'pages/second.html'
+      controller 'secondcontroller'
+      }
+
+   myApp.controller('secondcontroller',['$scope','$http','$routeParams'function($scope,$http,$routeParams){
+
+                        $scope.num = routePArams.num ;
+                        
+                          
+                         }]);
+
+- single page application a just content ta update hobe ar baki header , footer agula 
+update howa lagbe na so spas is verry faster and and angular js has adopted spas 
+
+# singleton and services 
+- singleton : one and only copy of an object 
+
+# Custome Service 
+- In angular js mind it it whenever you will create a custom service you must 
+have to inject that service in controller . more stratightforwarat you have to 
+inject the service in controller's []
+
+- If I want that updating a page will update another page then in that case 
+I will have to use singleton and angular js watcher 
+- factories and services are very similar 
+
+# Reusable Html component
+
+
+
+
+
+
 
