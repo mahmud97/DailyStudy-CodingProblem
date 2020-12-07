@@ -4,4 +4,6 @@
 - then training ar por amra weight tuning kori using gradient descent algorithm
 - sigmoid function use kore amra sob value ke 0 and 1 ar modde tune korte pari  
 - Neural network a feature extraction ar jonno convolution and pulling layer use kora hoi 
-ar dense layer a classification kori 
+ar dense layer a classification kori
+- The best thing about deep learning that it can learn by itself if we provide 
+sufficient data 
